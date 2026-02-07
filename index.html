@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARSA X SQUAD | Physics Based Neural Network</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-logo">ARSA<span>X</span>SQUAD</div>
+        <ul class="nav-links">
+            <li><a href="#hero" class="nav-link active">Home</a></li>
+            <li><a href="#problem" class="nav-link">Problem</a></li>
+            <li><a href="#solution" class="nav-link">Solution</a></li>
+            <li><a href="#demo" class="nav-link">Demo</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">AI that obeys <span>The Laws of Physics</span></h1>
+            <p class="hero-tagline">The End of "Black Box" Computer Vision.</p>
+            <p class="hero-subtitle">Generative AI hallucinates. <strong>ChaosNet measures.</strong><br>
+                The world's first Neuro-Symbolic Fusion engine running on $30 silicon.</p>
+            <button id="start-btn" class="btn-start">
+                <span class="btn-text">Initialize Physics Core</span>
+                <span class="btn-icon">▶</span>
+            </button>
+        </div>
+        <div class="hero-visual">
+            <canvas id="physics-canvas"></canvas>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="section">
+        <div class="container">
+            <h2 class="section-label">The Industry Crisis</h2>
+            <h3 class="section-headline">Deep Learning has hit a wall.</h3>
+            <div class="stats-row">
+                <div class="stat">
+                    <span class="stat-num">Hallucination</span>
+                    <span class="stat-desc">Neural Networks guess. They don't "know" mass or velocity.</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">Compute Tax</span>
+                    <span class="stat-desc">Requires $1000+ GPUs to run basic perception.</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">Black Box</span>
+                    <span class="stat-desc">Unexplainable failures in edge cases. No debugging.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="section section-dark">
+        <div class="container">
+            <h2 class="section-label">The Paradigm Shift</h2>
+            <h3 class="section-headline">Neuro-Symbolic Fusion.</h3>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">⚛️</div>
+                    <h4>Physics-Native</h4>
+                    <p>We don't "learn" motion. We calculate it. Optical Flow & Kinematics are hard-coded.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👁️</div>
+                    <h4>Glass Box AI</h4>
+                    <p>Explainable decisions. We know exactly WHY the car stopped (TTC < 2.5s).</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Edge Supremacy</h4>
+                    <p>High-fidelity autonomy on $30 chips. No NPU needed. 1/10th the power.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🚀</div>
+                    <h4>ChaosNet</h4>
+                    <p>First to achieve 25+ FPS with 99.9% physical accuracy on standard CPUs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="section">
+        <div class="container">
+            <h2 class="section-label">Live Demo</h2>
+            <h3 class="section-headline">Real-time Physics Engine Output</h3>
+
+            <!-- TABS -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('vision')">Live Vision</button>
+                <button class="tab-btn" onclick="switchTab('backend')">Backend Logic</button>
+                <button class="tab-btn" onclick="switchTab('webcam')">Interactive Webcam</button>
+            </div>
+
+            <!-- Single VIDEO MAIN -->
+            <div class="video-full accent">
+                <!-- LIVE VISION -->
+                <div id="vision-view" class="view-panel">
+                    <div class="video-title">Augmented Reality View (Stream 1)</div>
+                    <img src="http://localhost:5000/stream.mjpg"
+                        style="width:100%; height:auto; display: block; min-height: 480px; background: #000;">
+                </div>
+
+                <!-- BACKEND DATA -->
+                <div id="backend-view" class="view-panel" style="display: none;">
+                    <div class="video-title">Decision Logic & Math (Stream 2)</div>
+                    <img src="http://localhost:5000/debug.mjpg"
+                        style="width:100%; height:auto; display: block; min-height: 480px; background: #000; font-family: 'Fira Code', monospace;">
+                </div>
+
+                <!-- WEBCAM -->
+                <div id="webcam-view" class="view-panel" style="display: none;">
+                    <div class="video-title">Live Physics Playground (Stream 3)</div>
+                    <img src="http://localhost:5000/webcam.mjpg"
+                        style="width:100%; height:auto; display: block; min-height: 480px; background: #000;">
+                    <div style="padding: 1rem; text-align: center; color: #888;">
+                        <p>ℹ️ Wave your hand or move the camera to see velocity vectors and FOE calculations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specs -->
+            <div class="specs">
+                <div class="spec"><span>25+</span> FPS</div>
+                <div class="spec"><span>&lt;25ms</span> Latency</div>
+                <div class="spec"><span>22</span> Classes</div>
+                <div class="spec"><span>$30</span> Hardware</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stable IDs Section (Separate) -->
+    <section class="section section-dark">
+        <div class="container">
+            <h3 class="section-headline" style="font-size: 2rem; margin-bottom: 2rem;">Stable ID Tracking</h3>
+            <div class="video-full">
+                <video id="video-stable" muted loop playsinline preload="auto" autoplay>
+                    <source src="test1_stable_ids_opt.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Built by <strong>ARSA X SQUAD</strong></p>
+        <p class="footer-sub">Physics Based Neural Network</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Inline Tab Switcher
+        function switchTab(tabName) {
+            // Hide all
+            document.getElementById('vision-view').style.display = 'none';
+            document.getElementById('backend-view').style.display = 'none';
+            document.getElementById('webcam-view').style.display = 'none';
+
+            // Show target
+            document.getElementById(tabName + '-view').style.display = 'block';
+
+            // Update buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
