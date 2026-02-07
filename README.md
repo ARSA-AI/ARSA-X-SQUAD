@@ -97,4 +97,4 @@ If a detection violates safety margins, the system defaults to a **Fail-Safe Sta
 ---
 
 *Built for the Chaos. Powered by Physics.*
-**ARSA AI**
+**ARSA X SQUAD**
