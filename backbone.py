@@ -1,6 +1,6 @@
 # ==============================================================================
 # CHAOSNET: CUSTOM NEURAL ARCHITECTURE (Built From Scratch)
-# ==============================================================================
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -86,3 +86,4 @@ class Backbone(nn.Module):
         x = self.stage3(x)
         features = self.stage4(x)
         return features
+
